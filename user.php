@@ -104,7 +104,7 @@ class User implements Crud{
 		$offset = $this->time_zone_offset;
         $utc_timestamp =$this->utc_timestamp;
 		$link= $this->openConnection();
-		$res = mysqli_query($link,"INSERT INTO person(first_name,last_name,user_city, username, password, fileToUpload, utctimestamp, timezoneoffset) VALUES('$fn','$ln','$city', '$uname', '$pass' ,'$fileToUpload' ,'$utc_timestamp', '$offset')") or die("Error: " .mysqli_error($link));
+		$res = mysqli_query($link,"INSERT INTO user(first_name,last_name,user_city, username, password, fileToUpload, utctimestamp, timezoneoffset) VALUES('$fn','$ln','$city', '$uname', '$pass' ,'$fileToUpload' ,'$utc_timestamp', '$offset')") or die("Error: " .mysqli_error($link));
 		$this->closeConnection();
 		return $res;
 
